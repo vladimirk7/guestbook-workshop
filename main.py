@@ -1,9 +1,11 @@
 from contextlib import asynccontextmanager
 
 import psycopg
-from config import settings
 from fastapi import FastAPI
 from pydantic import BaseModel
+
+from config import settings
+
 
 def connect():
     return psycopg.connect(settings.database_url)
